@@ -3,7 +3,7 @@
  * @Author: ogi.setiawan 
  * @Date: 2023-11-01 09:44:31 
  * @Last Modified by: ogi.setiawan
- * @Last Modified time: 2023-11-10 23:54:33
+ * @Last Modified time: 2023-11-15 11:11:07
  */
 //fastcgi_pass 127.0.0.1:90 00; # Pastikan PHP-FPM berjalan di port 9000
 
@@ -26,8 +26,24 @@
 //? Dari diskusi tersebut biasanya menghasilkan sebuah acceptance scenario yang mendeskripsikan behavior dari fitur yang hendak dibangun
 //? see format ( Acceptance Scenario dan Features Files) ditulis dengan bahasa Gherkin
 
-
-//~  
 //~ Menulis Skenario Test 
 //? describe digunakan untuk mengelompokkan serangkaian pengujian yang berkaitan atau serupa. Ini membantu dalam mengorganisasi dan mengelompokkan pengujian yang berhubungan.
 //? it digunakan untuk mendefinisikan pengujian individu. Ia menjelaskan satu spesifikasi atau perilaku yang diharapkan dari kode yang sedang diuji.
+
+//@ Clean Architecture
+//~ Design Pattern 
+//? Creational Pattern : Berhubungan dengan penciptaan suatu objek (instantiation).
+/// penulisan pada sebuah tujuan yg sama di buat minimalisir dengan class
+//? Structural Pattern : Berhubungan dengan komposisi suatu objek (relationships).
+//? Behavioral Pattern : Berhubungan dengan komunikasi antar objek (communications).
+//~ Struktur Proyek (Domain Driver Design)
+//? Domains; Merupakan Enterprise Business Layer, di dalam folder ini terdapat model domain (entities) dan abstract/interface repository
+//? Applications; terdapat alur bisnis yang kita definisikan dalam bentuk use case ( services, helper, tools)
+//? Interface; Merupakan adapter atau jembatan penghubung antara use case dengan agen eksternal, seperti HTTP server ( hapi plugin)
+//? Infrastructures; Merupakan letak agen eksternal seperti framework, HTTP Server, Database, JWT Token, Bcrypt dan sebagainya
+//? Commons; shared folder yang berisi class, function, atau apa pun yang boleh digunakan oleh ke-empat folder tersebut
+//~ Custom Error
+//? ClientError; Custom error yang mengindikasikan eror karena masalah yang terjadi pada client
+//? InvariantError; Custom error yang mengindikasikan eror karena kesalahan bisnis logic pada data yang dikirimkan oleh client. Kesalahan validasi data merupakan salah satu InvariantError
+//? AuthenticationError; Custom error yang mengindikasikan eror karena masalah autentikasi. Contohnya password yang diberikan salah dan refresh token yang diberikan tidak valid.
+//? NotFoundError; Custom error yang mengindikasikan eror karena resource yang diminta client tidak ditemukan
