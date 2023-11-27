@@ -1,6 +1,6 @@
 const DeleteReply = require('../DeleteReply');
 
-describe('a DeleteReply entities', () => {
+describe('an DeleteReply entities', () => {
   it('should throw error when payload did not contain needed property', () => {
     const payload = {};
 

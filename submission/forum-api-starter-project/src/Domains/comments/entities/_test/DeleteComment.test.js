@@ -1,6 +1,6 @@
 const DeleteComment = require('../DeleteComment');
 
-describe('a DeleteComment entities', () => {
+describe('an DeleteComment entities', () => {
   it('should throw error when payload did not contain needed property', () => {
     const payload = {};
 

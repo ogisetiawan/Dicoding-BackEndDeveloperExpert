@@ -1,14 +1,12 @@
 const RegisterUser = require('../../../Domains/users/entities/RegisterUser');
-const RegisteredUser =
-    require('../../../Domains/users/entities/RegisteredUser');
+const RegisteredUser = require('../../../Domains/users/entities/RegisteredUser');
 const UserRepository = require('../../../Domains/users/UserRepository');
 const PasswordHash = require('../../security/PasswordHash');
 const AddUserUseCase = require('../AddUserUseCase');
 
 describe('AddUserUseCase', () => {
   /**
-   * Menguji apakah use case mampu mengoskestrasikan
-   * langkah demi langkah dengan benar.
+   * Menguji apakah use case mampu mengoskestrasikan langkah demi langkah dengan benar.
    */
   it('should orchestrating the add user action correctly', async () => {
     // Arrange
@@ -29,12 +27,12 @@ describe('AddUserUseCase', () => {
     const mockPasswordHash = new PasswordHash();
 
     /** mocking needed function */
-    mockUserRepository.verifyAvailableUsername = jest
-        .fn(() => Promise.resolve());
-    mockPasswordHash.hash = jest
-        .fn(() => Promise.resolve('encrypted_password'));
-    mockUserRepository.addUser = jest
-        .fn(() => Promise.resolve(mockRegisteredUser));
+    mockUserRepository.verifyAvailableUsername = jest.fn()
+      .mockImplementation(() => Promise.resolve());
+    mockPasswordHash.hash = jest.fn()
+      .mockImplementation(() => Promise.resolve('encrypted_password'));
+    mockUserRepository.addUser = jest.fn()
+      .mockImplementation(() => Promise.resolve(mockRegisteredUser));
 
     /** creating use case instance */
     const getUserUseCase = new AddUserUseCase({
@@ -52,8 +50,7 @@ describe('AddUserUseCase', () => {
       fullname: useCasePayload.fullname,
     }));
 
-    expect(mockUserRepository.verifyAvailableUsername)
-        .toBeCalledWith(useCasePayload.username);
+    expect(mockUserRepository.verifyAvailableUsername).toBeCalledWith(useCasePayload.username);
     expect(mockPasswordHash.hash).toBeCalledWith(useCasePayload.password);
     expect(mockUserRepository.addUser).toBeCalledWith(new RegisterUser({
       username: useCasePayload.username,

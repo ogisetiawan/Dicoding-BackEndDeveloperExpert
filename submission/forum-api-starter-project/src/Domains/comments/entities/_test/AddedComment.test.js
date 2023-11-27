@@ -1,6 +1,6 @@
 const AddedComment = require('../AddedComment');
 
-describe('an AddedComment entities', () => {
+describe('an AddedComment entitites', () => {
   it('should throw error when payload did not contain needed property', () => {
     const payload = {
       id: 'comment-123kj',

@@ -1,8 +1,6 @@
 const autoBind = require('auto-bind');
-const AddThreadUseCase =
-    require('../../../../Applications/use_case/AddThreadUseCase');
-const GetThreadByIdUseCase =
-    require('../../../../Applications/use_case/GetThreadByIdUseCase');
+const AddThreadUseCase = require('../../../../Applications/use_case/AddThreadUseCase');
+const GetThreadByIdUseCase = require('../../../../Applications/use_case/GetThreadByIdUseCase');
 
 class ThreadsHandler {
   constructor(container) {
