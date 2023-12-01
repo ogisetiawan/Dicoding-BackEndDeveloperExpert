@@ -3,7 +3,7 @@
  * @Author: ogi.setiawan 
  * @Date: 2023-11-01 09:44:31 
  * @Last Modified by: ogi.setiawan
- * @Last Modified time: 2023-11-15 11:11:07
+ * @Last Modified time: 2023-12-01 22:38:04
  */
 //fastcgi_pass 127.0.0.1:90 00; # Pastikan PHP-FPM berjalan di port 9000
 
@@ -47,3 +47,8 @@
 //? InvariantError; Custom error yang mengindikasikan eror karena kesalahan bisnis logic pada data yang dikirimkan oleh client. Kesalahan validasi data merupakan salah satu InvariantError
 //? AuthenticationError; Custom error yang mengindikasikan eror karena masalah autentikasi. Contohnya password yang diberikan salah dan refresh token yang diberikan tidak valid.
 //? NotFoundError; Custom error yang mengindikasikan eror karena resource yang diminta client tidak ditemukan
+
+//@ CI / CD
+//? CI (Continuous Integration); proses terintegrasinya sebuah aksi ketika developer mengirim (push) kode barunya ataupun melakukan pull request (PR) e branch utama pada repository 
+//? CD (Continuous Deployment). proses deployment aplikasi secara otomatis yang hanya akan dijalankan bila pengujian aplikasi berstatus passed
+//? Tools; travis CI, Jenkins, GitHub Action
