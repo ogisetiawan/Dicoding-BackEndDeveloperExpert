@@ -95,3 +95,14 @@
 //? serangan menyadap, tak hanya memantau, serangan ini dapat mencegat dan mengubah pesan yang dikirim atau pesan yang diterima
 /// IP spoofing atau ARP spoofing
 //?  karena korban dan penyerang berada di dalam jaringan yang sama. Biasanya disebabkan oleh korban yang tidak hati-hati ketika menggunakan WiFi hotspot publik
+
+//@ Scalability
+/// Pencegahan Kehilangan Data
+//? Selalu lakukan backup untuk mencegah kehilangan data pada database
+//? Jangan menyimpan hasil backup di lokasi yang sam
+//? Agar backup dilakukan secara rutin, manfaatkanlah job scheduler seperti CRON.
+/// Menganalisis Kegagalan
+//?  menuliskan log pada berkas atau Anda bisa memanfaatkan stack ELK supaya sistem logging dan analisis lebih komprehensif.
+/// Go Global
+//? Untuk mengurangi latency, terapkan beberapa teknik caching seperti memanfaatkan Content Delivery Network dan Server-Side Caching.
+
