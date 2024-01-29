@@ -106,3 +106,31 @@
 /// Go Global
 //? Untuk mengurangi latency, terapkan beberapa teknik caching seperti memanfaatkan Content Delivery Network dan Server-Side Caching.
 
+
+
+//@ AWS EC2, IAM ROLE, SECURITY GROUP, RDS ETC
+/// REGISTER
+//? buat card debit jago, dan darftarkan nomor debit card ke aws ( tunggu 1 -3 hari ) dengan saldo mengendap min. 1 USD
+/// IAM ROLE
+//? buatkan role dan users IAM group, karena lebih baik tdk menggunakan root account aws ( https://www.dicoding.com/academies/261/tutorials/15555 )
+/// SECURITY GROUP
+//? buat Security Group firewall pada EC2 instance yang dapat mengontrol lalu lintas masuk (inbound) dan keluar (outbound) di Virtual Private Cloud (VPC) ( https://www.dicoding.com/academies/261/tutorials/35213?from=15555 )
+/// RDS
+//? buat cluster database https://www.dicoding.com/academies/276/tutorials/19042
+/// CREATE DATABASE
+//? https://www.dicoding.com/academies/276/tutorials/19047?from=19042
+/// CONNECT TO EC2
+//? DNS = Public IPv4 address, name is ubuntu/OSnya,  https://www.dicoding.com/academies/276/tutorials/19057?from=19052
+//? install nodejs, github pull repo etc
+//? create env dan masukan host == Endpoint RDS forumapi.cj2iygo8emmu.ap-southeast-......
+//@ RDS
+/// endpoint: forumapi.cj2iygo8emmu.ap-southeast-1.rds.amazonaws.com
+/// username: postgress
+/// password: supersecretpassword
+//@ EC2
+/// public DNS : ec2-47-128-235-95.ap-southeast-1.compute.amazonaws.com
+/// public ip : http://47.128.235.95:5000/
+/// dns : https://fresh-parents-mate-mysteriously.a276.dcdg.xyz/
+/// ssh : ssh -i "forum-api-webserver.pem" ubuntu@47.128.235.95
+//@ ACC
+/// ogisetiawan21@gmail.com
